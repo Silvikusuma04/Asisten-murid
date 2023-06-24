@@ -1,0 +1,15 @@
+{
+    "name": "andre/asistenmurid",
+    "description": "untuk test hackaton silvi kusuma",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Silvikusuma04",
+            "email": "silvikusuma043@gmail.com"
+        }
+    ],
+    "require": {
+    "openai/openai-api": "^1.0"
+    }
+}
