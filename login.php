@@ -3,9 +3,8 @@ session_start();
 
 $nik=@$_POST['nik'];
 $nama=@$_POST['nama'];
-
-
 $file="file/".$nik."-".$nama.".txt";
+
 
 // jika di tekan tombol pengguna baru
 if (isset($_POST['pengguna_baru'])) {
@@ -15,7 +14,7 @@ if (isset($_POST['pengguna_baru'])) {
         fclose($fh);
         $alert="<div class='alert alert-success'>Selamat Datang Teman-Teman Baru</div>";
         $_SESSION['nik']=$nik;
-        $_SESSION['nama']=$nik;
+        $_SESSION['nama']=$nama;
         echo "<meta http-equiv='refresh', content='2; url=index.php'>";
     }
     else{
@@ -25,13 +24,13 @@ if (isset($_POST['pengguna_baru'])) {
 // jika di tekan tombol masuk
 elseif(isset($_POST['masuk'])){
     if (!empty(file_exists($file))) {
-        $alert="<div class='alert alert-success'>Anda Berhasil Masuk</div>";
+        $alert="<div class='alert alert-success'>Anda berhasil masuk</div>";
         $_SESSION['nik']=$nik;
         $_SESSION['nama']=$nama;
         echo "<meta http-equiv='refresh', content='2; url=index.php'>";
     }
     else{
-        $alert="<div class='alert alert-danger'>Maaf Anda gagal masuk</div>";
+        $alert="<div class='alert alert-danger'>Anda gagal masuk</div>";
     }
 }
 
@@ -51,7 +50,7 @@ elseif(isset($_POST['masuk'])){
     
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-lg-5">
+        <div class="col-lg-4">
             <div class="card mt-5">
                 <div class="card-body py-5">
                 <center><img src="logo.png"widht=120 height=70></center>
@@ -59,10 +58,10 @@ elseif(isset($_POST['masuk'])){
                     <!-- form login -->
                     <div class="card-body py-5">
                     <form action="" method="POST">
-                        <input type="nik" name="nik" class="form-control mb-4" placeholder="nik/absen" required>
-                        <input type="text" name="Nama" class="form-control mb-4" placeholder="Nama Lengkap" required>
+                        <input type="number" name="nik" class="form-control mb-4" placeholder="NIK" required>
+                        <input type="text" name="nama" class="form-control mb-4" placeholder="Nama Lengkap" required>
                         <div class="form-inline btn-a">
-                            <button class="btn btn-primary" name="pengguna_baru">Murid Baru</button>
+                            <button class="btn btn-primary" name="pengguna_baru">Murid baru</button>
                             <button class="btn btn-primary btn-b" name="masuk">Masuk</button>
                         </div>
                     </form>

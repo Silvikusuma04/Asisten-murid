@@ -30,7 +30,7 @@ if(!empty($_SESSION['nik'])){
         <div class="col-lg-9 mt-5">
             <?php
                 if ($page=='asistenAI') {
-                    include"asistenAI";
+                    include"asistenAI.php";
                 }
                 if ($page=='jadwal') {
                     include"jadwal.php";
