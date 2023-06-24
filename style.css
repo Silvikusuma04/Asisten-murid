@@ -1,0 +1,7 @@
+.btn-a{
+    position: relative;
+}
+.btn-b{
+    position: absolute;
+    right: 0;
+}
